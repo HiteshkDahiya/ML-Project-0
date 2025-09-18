@@ -11,15 +11,13 @@ from src.logger import logging
 import os
 from src.utils import save_object
 
-logging.info('initializing data_transformaton file')
 @dataclass
 class DataTransformationConfig:
     preprocessior_obj_file_path = os.path.join('artifacts', 'preprocessor.pkl')
-logging.info('initializing data_transformaton file')
 class DataTransformation:
     def __init__(self):
         self.data_transformation_config = DataTransformationConfig()
-    logging.info('initializing data_transformaton file')
+
     def get_data_transformer_object(self):
         try:
             numerical_columns = ['writing_score', 'reading_score']
